@@ -25,10 +25,11 @@ namespace StarterAssets
         [Range(0.0f, 0.3f)]
         public float RotationSmoothTime = 0.12f;
 
-        public float LookSensitivity = 1f;
 
         [Tooltip("Acceleration and deceleration")]
         public float SpeedChangeRate = 10.0f;
+        public float LookSensitivity = 1f;
+
 
         public AudioClip LandingAudioClip;
         public AudioClip[] FootstepAudioClips;
@@ -389,6 +390,9 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+        public void SetSensitivity(float newSens) {
+            LookSensitivity = newSens;
         }
     }
 }
